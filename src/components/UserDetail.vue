@@ -3,6 +3,7 @@
     <h3>You may view the User Details here</h3>
     <p>Many Details</p>
     <p>User name: {{ name }}</p>
+    <p>User age: {{ userAge }}</p>
     <button @click="resetName">Reset name</button>
     <button @click="resetFn">Reset name</button>
   </div>
@@ -15,7 +16,8 @@ export default {
       type: String,
       required: true
     },
-    resetFn: Function
+    resetFn: Function,
+    userAge: Number
   },
   methods: {
     resetName() {

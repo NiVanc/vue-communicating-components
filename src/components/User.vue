@@ -7,10 +7,15 @@
     <hr />
     <div class="row">
       <div class="col-xs-12 col-sm-6">
-        <app-user-detail :name="name" @nameWasChanged="name = $event" :resetFn="resetName"></app-user-detail>
+        <app-user-detail
+          :name="name"
+          @nameWasChanged="name = $event"
+          :resetFn="resetName"
+          :userAge="age"
+        ></app-user-detail>
       </div>
       <div class="col-xs-12 col-sm-6">
-        <app-user-edit></app-user-edit>
+        <app-user-edit :userAge="age" :changeAgeFn="changeAge"></app-user-edit>
       </div>
     </div>
   </div>
@@ -23,7 +28,8 @@ import UserEdit from "./UserEdit.vue";
 export default {
   data() {
     return {
-      name: "Nico"
+      name: "Nico",
+      age: 27
     };
   },
   methods: {
@@ -32,6 +38,9 @@ export default {
     },
     resetName() {
       this.name = "Nico";
+    },
+    changeAge() {
+      this.age = 33;
     }
   },
   components: {
