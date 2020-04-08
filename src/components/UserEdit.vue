@@ -7,12 +7,15 @@
 </template>
 
 <script>
+import { eventBus } from "../main";
+
 export default {
   props: ["userAge"],
   methods: {
     changeAge() {
       this.userAge = 33;
-      this.$emit("ageWasChanged", this.userAge);
+      // this.$emit("ageWasChanged", this.userAge);
+      eventBus.$emit("ageWasChanged", this.userAge);
     }
   }
 };
